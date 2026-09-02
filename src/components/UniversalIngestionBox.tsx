@@ -29,6 +29,7 @@ import {
   Inbox,
   ShieldCheck,
   FileCheck,
+  Layers,
 } from 'lucide-react';
 import { ModelContextProtocolAPI, WebMCPEvent } from '../types/webmcp';
 import {
@@ -43,6 +44,7 @@ interface UniversalIngestionBoxProps {
   events?: WebMCPEvent[];
   onViewContextGraph?: () => void;
   onOpenReportInbox?: (reportId?: string) => void;
+  onNavigateToCanvas?: () => void;
 }
 
 export const UniversalIngestionBox: React.FC<UniversalIngestionBoxProps> = ({
@@ -50,6 +52,7 @@ export const UniversalIngestionBox: React.FC<UniversalIngestionBoxProps> = ({
   events = [],
   onViewContextGraph,
   onOpenReportInbox,
+  onNavigateToCanvas,
 }) => {
   const [ingestMode, setIngestMode] = useState<'url' | 'multimedia'>('url');
 
@@ -555,6 +558,16 @@ export const UniversalIngestionBox: React.FC<UniversalIngestionBoxProps> = ({
                 </div>
 
                 <div className="flex items-center gap-2 text-xs">
+                  {onNavigateToCanvas && (
+                    <button
+                      onClick={onNavigateToCanvas}
+                      className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#0D9488]/20 text-[#2DD4BF] border border-[#0D9488]/40 hover:bg-[#0D9488]/30 text-[11px] font-semibold transition-colors cursor-pointer"
+                      title="View dynamic research card on Interactive Canvas"
+                    >
+                      <Layers className="h-3 w-3 text-[#2DD4BF]" />
+                      <span>Canvas Card</span>
+                    </button>
+                  )}
                   {latestUrlRecord && onOpenReportInbox && (
                     <button
                       onClick={() => onOpenReportInbox(latestUrlRecord.id)}
@@ -948,6 +961,16 @@ export const UniversalIngestionBox: React.FC<UniversalIngestionBoxProps> = ({
                 </div>
 
                 <div className="flex items-center gap-2 text-xs">
+                  {onNavigateToCanvas && (
+                    <button
+                      onClick={onNavigateToCanvas}
+                      className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#0D9488]/20 text-[#2DD4BF] border border-[#0D9488]/40 hover:bg-[#0D9488]/30 text-[11px] font-semibold transition-colors cursor-pointer"
+                      title="View dynamic research card on Interactive Canvas"
+                    >
+                      <Layers className="h-3 w-3 text-[#2DD4BF]" />
+                      <span>Canvas Card</span>
+                    </button>
+                  )}
                   {latestMediaRecord && onOpenReportInbox && (
                     <button
                       onClick={() => onOpenReportInbox(latestMediaRecord.id)}

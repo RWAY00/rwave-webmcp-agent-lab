@@ -33,6 +33,7 @@ interface HeaderProps {
   onTabChange: (tab: 'inspector' | 'agent' | 'canvas' | 'context' | 'events') => void;
   onOpenCustomToolModal: () => void;
   onOpenReportInbox?: () => void;
+  onOpenAutonomousDemo?: () => void;
   toolsCount: number;
   contextCount: number;
   eventCount: number;
@@ -45,6 +46,7 @@ export const Header: React.FC<HeaderProps> = ({
   onTabChange,
   onOpenCustomToolModal,
   onOpenReportInbox,
+  onOpenAutonomousDemo,
   toolsCount,
   contextCount,
   eventCount,
@@ -119,6 +121,17 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Quick Action buttons on mobile */}
           <div className="flex items-center gap-1.5 md:hidden">
+            {onOpenAutonomousDemo && (
+              <button
+                id="mobile-launch-demo-btn"
+                onClick={onOpenAutonomousDemo}
+                className="flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-md bg-gradient-to-r from-[#00CCCC] to-[#0D9488] text-[#0A0C14] font-bold shadow-[0_0_10px_rgba(0,204,204,0.3)]"
+                title="1-Click Autonomous Demo"
+              >
+                <Sparkles className="h-3.5 w-3.5 fill-current" />
+                <span>Demo</span>
+              </button>
+            )}
             {onOpenReportInbox && (
               <button
                 id="mobile-inbox-btn"
@@ -239,6 +252,19 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Global WebMCP Protocol Controls & Report Inbox */}
         <div className="hidden md:flex items-center gap-2.5">
+          {/* 1-Click Autonomous Demo Showcase Button */}
+          {onOpenAutonomousDemo && (
+            <button
+              id="header-launch-demo-btn"
+              onClick={onOpenAutonomousDemo}
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-[#00CCCC] to-[#0D9488] hover:opacity-95 text-[#0A0C14] font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_15px_rgba(0,204,204,0.4)] cursor-pointer"
+              title="Launch 1-Click Autonomous Demo Flow (Judge Showcase)"
+            >
+              <Sparkles className="h-3.5 w-3.5 fill-current" />
+              <span>1-Click Demo</span>
+            </button>
+          )}
+
           {/* Report Inbox Button */}
           {onOpenReportInbox && (
             <button

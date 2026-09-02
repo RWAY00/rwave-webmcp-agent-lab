@@ -15,6 +15,7 @@ import { ContextGraphView } from './components/ContextGraphView';
 import { EventStreamLogger } from './components/EventStreamLogger';
 import { CustomToolModal } from './components/CustomToolModal';
 import { ReportInboxDrawer } from './components/ReportInboxDrawer';
+import { AutonomousDemoModal } from './components/AutonomousDemoModal';
 import { TelemetryBar } from './components/TelemetryBar';
 import {
   WebMCPTool,
@@ -31,6 +32,7 @@ export default function App() {
   const [events, setEvents] = useState<WebMCPEvent[]>([]);
   const [isCustomToolModalOpen, setIsCustomToolModalOpen] = useState(false);
   const [isReportInboxOpen, setIsReportInboxOpen] = useState(false);
+  const [isAutonomousDemoOpen, setIsAutonomousDemoOpen] = useState(false);
   const [selectedReportId, setSelectedReportId] = useState<string | null>(null);
 
   // Initialize tools and initial context once
@@ -115,6 +117,7 @@ export default function App() {
         onTabChange={setActiveTab}
         onOpenCustomToolModal={() => setIsCustomToolModalOpen(true)}
         onOpenReportInbox={() => handleOpenReportInbox()}
+        onOpenAutonomousDemo={() => setIsAutonomousDemoOpen(true)}
         toolsCount={tools.length}
         contextCount={contextItems.length}
         eventCount={events.length}
@@ -130,6 +133,8 @@ export default function App() {
             onOpenCustomToolModal={() => setIsCustomToolModalOpen(true)}
             onViewContextGraph={() => setActiveTab('context')}
             onOpenReportInbox={(id) => handleOpenReportInbox(id)}
+            onOpenAutonomousDemo={() => setIsAutonomousDemoOpen(true)}
+            onNavigateToCanvas={() => setActiveTab('canvas')}
           />
         )}
 
@@ -153,6 +158,17 @@ export default function App() {
 
       {/* Persistent Live Telemetry Bar */}
       <TelemetryBar metrics={metrics} />
+
+      {/* 1-Click Autonomous Demo Flow Modal */}
+      <AutonomousDemoModal
+        mcp={mcp}
+        isOpen={isAutonomousDemoOpen}
+        onClose={() => setIsAutonomousDemoOpen(false)}
+        onNavigateToCanvas={() => {
+          setIsAutonomousDemoOpen(false);
+          setActiveTab('canvas');
+        }}
+      />
 
       {/* Custom Tool Creator Modal */}
       <CustomToolModal

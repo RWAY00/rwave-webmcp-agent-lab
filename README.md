@@ -8,57 +8,33 @@
 ---
 
 ## 🚀 Overview
-**R-WAVE WebMCP Agent Lab** is a cutting-edge, agent-native web application built for the **WebMCP Challenge**. Unlike traditional, slow scrapers or fragile UI automation bots that rely on screen pixel-scraping, R-WAVE leverages the emerging **Web Model Context Protocol (WebMCP)** standard to bridge browser-native DOM capabilities directly to AI agents via clean, structured JSON schemas and secure client-side execution boundaries.
+**R-WAVE WebMCP Agent Lab** is a high-performance, agent-native research workspace built for the **WebMCP Challenge**. By bridging browser-native DOM capabilities directly to AI agents via the W3C **Web Model Context Protocol (WebMCP)** standard, R-WAVE enables secure, in-memory, zero-latency execution without fragile scrapers or IPC overhead.
 
 ---
 
-## ✨ Key Architectural Features
+## ✨ Key Architectural Features & Enhancements
 
-1. **Client-Side WebMCP Tool Registry (`document.modelContext`)**
-   - Exposes structured browser capabilities natively to AI agents using standard W3C draft protocols.
-   - Zero IPC latency and direct in-memory DOM context sharing.
-
-2. **Universal Multi-Format Ingestion Engine**
-   - **URL Ingester (`rwave_url_fetcher`):** Instantly captures full webpage DOM hierarchies, heading outlines (H1-H4), metadata, and computes token density without length truncation.
-   - **Multimedia Parser (`rwave_multimedia_synthesizer`):** Parses audio spectrum waveforms, video stream metadata (synchronized transcripts and chapter breakdowns), JSON trees, and PDF structures.
-
-3. **Grade-A Secure Sandbox & Telemetry**
-   - Real-time client-side benchmarking, memory heap tracking, and JS microtask execution speed auditing.
-   - Complete data isolation and secure agent execution parameters.
-
-4. **Intelligence Vault & Report Inbox**
-   - Automatically archives isolated analysis records with timestamps, titles, and individual export capabilities (Markdown/JSON).
+1. **1-Click Autonomous Demo Flow:** Judges can instantly test a pre-configured WebMCP ingestion pipeline, view live telemetry, and generate dynamic research cards with a single click.
+2. **Real-Time Measured Telemetry:** Integrates live browser performance APIs (`performance.now()` and `performance.memory`) to track actual execution latency and live JS heap consumption.
+3. **First-Class Interactive Canvas (`rwave_canvas_manager`):** Allows AI agents and users to dynamically render, update, and manage visual research cards directly within the app workspace.
+4. **Universal Multi-Format Ingestion Engine:** Deep extraction for web URLs, YouTube video streams (synchronized transcripts and chapter breakdowns), PDF structures, and JSON schemas.
+5. **Grade-A Secure Sandbox:** Complete data isolation adhering strictly to W3C ModelContext draft specifications with a clean, cool-tone executive UI palette.
 
 ---
 
-## 🛠️ Registered WebMCP Tools Directory
-
-| Tool Name | Category | Version | Core Functionality |
-| :--- | :--- | :--- | :--- |
-| `rwave_web_synthesizer` | Synthesis | 1.2.0 | Extracts active webpage DOM, semantic nodes, and calculates token estimates. |
-| `rwave_neural_inspector` | Diagnostic | 1.4.0 | Probes browser memory metrics, WebGL GPU profile, and hardware concurrency. |
-| `rwave_quantum_query` | Research | 2.0.0 | Multi-term semantic similarity scoring across active research corpus. |
-| `rwave_active_experiment_runner` | Benchmark | 1.1.0 | Executes matrix compute, SHA-256 hashing, and DOM mutation throughput tests. |
-| `rwave_dom_streamer` | Diagnostic | 1.0.0 | Tracks real-time DOM mutations and agent interaction telemetry. |
-| `rwave_hypothesis_tester` | Research | 1.2.0 | Evaluates scientific hypotheses using semantic overlap and empirical weighting. |
-| `rwave_sandbox_benchmark` | Benchmark | 1.3.0 | Comprehensive sandbox stress testing for memory and ArrayBuffer throughput. |
-| `rwave_url_fetcher` | Synthesis | 1.4.0 | Fetches external HTTP/HTTPS URLs and converts them into structured DOM context. |
-| `rwave_multimedia_synthesizer` | Synthesis | 1.5.0 | Multi-format analysis for audio, video streams, JSON, and PDF documents. |
-| `rwave_context_checkpoint` | System | 1.0.0 | Creates verifiable snapshot checkpoints in the shared context graph. |
-
----
-
-## 📊 Performance Telemetry & Benchmarks
-- **Average Execution Latency:** `~12.4 ms` (Client-native DOM sandbox)
-- **Security Isolation:** `W3C ModelContext Draft v1.4 (Grade-A Secure)`
-- **Token Efficiency:** Optimized for zero-waste structured agent context injection.
-
----
-
-## 📦 Getting Started & Usage
-1. Open the live application at [https://r-wave-webmcp-agent-lab.ai.studio](https://r-wave-webmcp-agent-lab.ai.studio).
-2. Input any target website URL or multimedia link in the ingestion panel.
-3. Execute live diagnostics or use the **Report Inbox** to inspect and export clean, human-readable executive intelligence reports.
+## 🛠️ Registered WebMCP Tools Directory (12 Tools)
+- `rwave_web_synthesizer` (Synthesis)
+- `rwave_neural_inspector` (Diagnostic)
+- `rwave_quantum_query` (Research)
+- `rwave_active_experiment_runner` (Benchmark)
+- `rwave_dom_streamer` (Diagnostic)
+- `rwave_hypothesis_tester` (Research)
+- `rwave_sandbox_benchmark` (Benchmark)
+- `rwave_url_fetcher` (Synthesis)
+- `rwave_multimedia_synthesizer` (Synthesis)
+- `rwave_context_checkpoint` (System)
+- `rwave_canvas_manager` (Action / UI Mutation)
+- `rwave_autonomous_executor` (Simulated Agent Logic)
 
 ---
 *© 2026 R-WAVE (Universal Intelligence Lab). All rights reserved.*

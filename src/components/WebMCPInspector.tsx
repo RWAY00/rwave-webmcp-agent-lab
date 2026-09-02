@@ -52,6 +52,8 @@ interface WebMCPInspectorProps {
   onOpenCustomToolModal: () => void;
   onViewContextGraph?: () => void;
   onOpenReportInbox?: (reportId?: string) => void;
+  onOpenAutonomousDemo?: () => void;
+  onNavigateToCanvas?: () => void;
 }
 
 export const WebMCPInspector: React.FC<WebMCPInspectorProps> = ({
@@ -61,6 +63,8 @@ export const WebMCPInspector: React.FC<WebMCPInspectorProps> = ({
   onOpenCustomToolModal,
   onViewContextGraph,
   onOpenReportInbox,
+  onOpenAutonomousDemo,
+  onNavigateToCanvas,
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -227,6 +231,18 @@ export const WebMCPInspector: React.FC<WebMCPInspectorProps> = ({
           </div>
 
           <div className="flex items-center gap-2.5 flex-wrap">
+            {onOpenAutonomousDemo && (
+              <button
+                id="inspector-launch-demo-btn"
+                onClick={onOpenAutonomousDemo}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#00CCCC] to-[#0D9488] hover:opacity-95 text-[#0A0C14] font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_15px_rgba(0,204,204,0.4)] cursor-pointer"
+                title="Launch 1-Click Autonomous Demo Flow (Judge Showcase)"
+              >
+                <Sparkles className="h-4 w-4 fill-current" />
+                <span>1-Click Demo Flow</span>
+              </button>
+            )}
+
             {onOpenReportInbox && (
               <button
                 id="inspector-open-inbox-btn"
@@ -255,7 +271,7 @@ export const WebMCPInspector: React.FC<WebMCPInspectorProps> = ({
               className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#00CCCC] hover:bg-[#00CCCC]/90 text-[#0A0C14] font-bold text-xs tracking-wider uppercase transition-all shadow-[0_0_15px_rgba(0,204,204,0.35)] cursor-pointer"
             >
               <Sparkles className="h-4 w-4" />
-              <span>Register Custom Tool</span>
+              <span>Register Tool</span>
             </button>
           </div>
         </div>
