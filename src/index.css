@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0A0C14;
+    color: #E0E7FF;
+    overflow-x: hidden;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Immersive UI Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0C14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0D9488;
+}
+
+/* Immersive Neon Pulse animation utility */
+@keyframes cool-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 204, 204, 0.6);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.92);
+    box-shadow: 0 0 4px rgba(0, 204, 204, 0.2);
+  }
+}
+
+.animate-cool-pulse {
+  animation: cool-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.glow-cyan-sm {
+  box-shadow: 0 0 12px rgba(0, 204, 204, 0.25);
+}
+
+.glow-cyan-md {
+  box-shadow: 0 0 20px rgba(0, 204, 204, 0.4);
+}
+
+.glow-teal-sm {
+  box-shadow: 0 0 12px rgba(13, 148, 136, 0.25);
+}
+

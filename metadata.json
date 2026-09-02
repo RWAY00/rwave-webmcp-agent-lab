@@ -1,0 +1,6 @@
+{
+  "name": "R-WAVE WebMCP Agent Lab",
+  "description": "Agent-native collaborative workspace and Web Model Context Protocol (WebMCP) browser environment for R-WAVE Universal Intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
